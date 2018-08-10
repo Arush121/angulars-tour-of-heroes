@@ -1,0 +1,52 @@
+ 
+<h2>Select from the Operations below</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+     [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<div>
+    <label>Enter the first number:
+      <input [(ngModel)]="num1" placeholder="number1">
+    </label>
+</div>
+
+  <div>
+      <label>Enter the second number:
+        <input [(ngModel)]="num2" placeholder="number2">
+      </label>
+  </div>
+  
+  <div>
+      <button (click)="sum()"> Sum the variables
+      </button>
+      
+   </div>
+
+      <!--<div *ngIf="selectedHero.id==1">   
+      <span>The addition is : {{heroes.num1 -- heroes.num2}}</span>
+      </div> --> 
+
+      <div>
+         <button (click)="restore()"> Restore the variables</button>
+      </div>
+
+      <div *ngIf="selectedHero">
+      <div *ngIf="selectedHero.id==1">     
+          <span>The addition is : {{num1 -- num2}}</span>
+          </div>
+        
+          <div *ngIf="selectedHero.id==2">     
+              <span>The subtraction is : {{num1 - num2}}</span>
+              </div>
+        
+          <div *ngIf="selectedHero.id==3">     
+              <span>The Multiplication is : {{num1 * num2}}</span>
+                  </div>
+        
+              <div *ngIf="selectedHero.id==4">     
+                      <span>The division is : {{num1 / num2}}</span>   
+                      </div>
+      </div>
